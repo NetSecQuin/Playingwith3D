@@ -95,42 +95,33 @@ function spaceRandom(num = 1) {
 }
 
 
-
-//Laptop
-function generateLaptop() {
-    const laptopGroup = new THREE.Group();
-
-    // Base
-    const baseGeometry = new THREE.BoxGeometry(2, 0.1, 1.2);
-    const baseMaterial = new THREE.MeshStandardMaterial({ color: 0x666666 });
-    const base = new THREE.Mesh(baseGeometry, baseMaterial);
-    base.position.y = 0.05;
-    laptopGroup.add(base);
-
-    // Screen
-    const screenGeometry = new THREE.BoxGeometry(1.8, 0.1, 1.1);
-    const screenMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
-    const screen = new THREE.Mesh(screenGeometry, screenMaterial);
-    screen.position.set(0, 0.15, 0.05);
-    laptopGroup.add(screen);
-
-    // Keyboard
-    const keyboardGeometry = new THREE.BoxGeometry(1.8, 0.05, 1.1);
-    const keyboardMaterial = new THREE.MeshStandardMaterial({ color: 0x333333 });
-    const keyboard = new THREE.Mesh(keyboardGeometry, keyboardMaterial);
-    keyboard.position.set(0, 0.025, 0);
-    laptopGroup.add(keyboard);
-
-    // Screen hinge
-    const hingeGeometry = new THREE.BoxGeometry(0.2, 0.1, 0.2);
-    const hingeMaterial = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
-    const hinge = new THREE.Mesh(hingeGeometry, hingeMaterial);
-    hinge.position.set(0, 0.225, 0.55);
-    laptopGroup.add(hinge);
-
-    scene.add(laptopGroup);
+//Cubes
+const cubesGroup = new THREE.Object3D();
+scene.add(cubesGroup);
+function generateCube() {
+  //Init object
+const geometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16, 3, 7);
+  const material = new THREE.MeshStandardMaterial({
+    color: 0x111111,
+    roughness: 0.4,
+    metalness: 0.5,
+  });
+  const cube = new THREE.Mesh(geometry, material);
+  cube.speedRotation = Math.random() * 0.1;
+  cube.positionX = spaceRandom();
+  cube.positionY = spaceRandom();
+  cube.positionZ = spaceRandom();
+  cube.castShadow = true;
+  cube.receiveShadow = true;
+  //Behavior
+  const newScaleValue = spaceRandom(0.3);
+  cube.scale.set(newScaleValue, newScaleValue, newScaleValue);
+  cube.rotation.x = spaceRandom((180 * Math.PI) / 180);
+  cube.rotation.y = spaceRandom((180 * Math.PI) / 180);
+  cube.rotation.z = spaceRandom((180 * Math.PI) / 180);
+  cube.position.set(cube.positionX, cube.positionY, cube.positionZ);
+  cubesGroup.add(cube);
 }
-
 
 
 //Particles
