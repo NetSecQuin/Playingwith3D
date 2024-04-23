@@ -95,7 +95,7 @@ const loader = new GLTFLoader();
 // Load a glTF model
 loader.load(
     // URL of the glTF file
-    'path_to_your_model/model.gltf',
+    'scene.gltf',
 
     // onLoad callback
     (gltf) => {
