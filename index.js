@@ -99,7 +99,7 @@ const cubesGroup = new THREE.Object3D();
 scene.add(cubesGroup);
 function generateCube() {
   //Init object
-const geometry = new THREE.PlaneGeometry(10, 10);
+const geometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16, 3, 7);
   const material = new THREE.MeshStandardMaterial({
     color: 0x111111,
     roughness: 0.4,
