@@ -99,7 +99,7 @@ const cubesGroup = new THREE.Object3D();
 scene.add(cubesGroup);
 function generateCube() {
   //Init object
-  const geometry = new THREE.IcosahedronGeometry(1);
+  const geometry = new THREE.SphereGeometry(1, 32, 32);
   const material = new THREE.MeshStandardMaterial({
     color: 0x111111,
     roughness: 0.4,
