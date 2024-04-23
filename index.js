@@ -117,7 +117,7 @@ loader.load(
 
     // onError callback
     (error) => {
-        console.error('Error loading glTF model', error);
+        console.error('Error loading glTF model - the file may not work', error);
     }
 );
 
