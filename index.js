@@ -99,16 +99,7 @@ const cubesGroup = new THREE.Object3D();
 scene.add(cubesGroup);
 function generateCube() {
   //Init object
-  const geometry = new THREE.TextGeometry( 'Hello, Three.js!', {
-        font: font,
-        size: 1,
-        height: 0.5,
-        curveSegments: 12,
-        bevelEnabled: true,
-        bevelThickness: 0.1,
-        bevelSize: 0.1,
-        bevelSegments: 5
-    });
+const geometry = new THREE.PlaneGeometry(10, 10);
   const material = new THREE.MeshStandardMaterial({
     color: 0x111111,
     roughness: 0.4,
