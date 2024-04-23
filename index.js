@@ -673,10 +673,10 @@ function projectResize() {
 const animate = () => {
   //Scene1
   //Particles spin around
-  particlesGroup.rotation.y += 0.004;
+  particlesGroup.rotation.y += 0.003;
   
   //Particles rotate
-  const time = performance.now() * 0.0003;
+  const time = performance.now() * 0.0002;
   particlesGroup.children.forEach((each) => {
     each.rotation.x += each.speedValue / 10;
     each.rotation.y += each.speedValue / 10;
