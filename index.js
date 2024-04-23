@@ -1,6 +1,6 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.148.0";
 import openSimplexNoise from 'https://cdn.skypack.dev/open-simplex-noise';
-import threeGltfLoader from 'https://cdn.skypack.dev/three-gltf-loader';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three-gltf-loader';
 
 // Initialize Three.js scene
 const scene = new THREE.Scene();
