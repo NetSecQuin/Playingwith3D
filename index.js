@@ -1,5 +1,7 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.148.0";
 import openSimplexNoise from 'https://cdn.skypack.dev/open-simplex-noise';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three/examples/jsm/loaders/GLTFLoader.js';
+
 
 //VARIABLES
 const sizes = {
@@ -86,3 +88,34 @@ renderer.setClearAlpha(0);
 renderer.shadowMap.enabled = false;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.shadowMap.needsUpdate = true;
+
+// Instantiate a loader
+const loader = new GLTFLoader();
+
+// Load a glTF model
+loader.load(
+    // URL of the glTF file
+    'path_to_your_model/model.gltf',
+
+    // onLoad callback
+    (gltf) => {
+        // The loaded object is a Three.js group containing the model(s)
+        const laptopModel = gltf.scene;
+
+        // Position and scale the model as needed
+        laptopModel.position.set(0, 0, 0);
+        laptopModel.scale.set(0.1, 0.1, 0.1);
+
+        // Add the model to the scene
+        scene.add(laptopModel);
+    },
+
+    // onProgress callback
+    undefined,
+
+    // onError callback
+    (error) => {
+        console.error('Error loading glTF model', error);
+    }
+);
+
