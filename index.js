@@ -101,15 +101,10 @@ scene.add(cubesGroup);
 function generateCube() {
   //Init object
 const geometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16, 3, 7);
-const textureLoader = new THREE.TextureLoader();
-textureLoader.load(
-  'bluestone.jpg',
-  (texture) => {
-      // Create material with image texture
-  const material = new THREE.MeshStandardMaterial({
-      map: texture,
-          roughness: 0.4,
-          metalness: 0.5
+const texture = new THREE.TextureLoader().load('bluestone.jpg' ); 
+// immediately use the texture for material creation 
+
+const material = new THREE.MeshBasicMaterial( { map:texture } );
 
   
   
@@ -118,7 +113,7 @@ textureLoader.load(
 //    color: 0x111111,
 //    roughness: 0.4,
 //    metalness: 0.5,
-  });
+//  });
 
 
 
