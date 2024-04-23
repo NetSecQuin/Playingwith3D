@@ -1,6 +1,6 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.148.0";
 import openSimplexNoise from 'https://cdn.skypack.dev/open-simplex-noise';
-import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.148.0/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from '/examples/jsm/loaders/GLTFLoader.js';
 
 
 
