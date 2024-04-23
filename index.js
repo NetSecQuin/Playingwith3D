@@ -106,8 +106,8 @@ textureLoader.load(
   'bluestone.jpg',
   (texture) => {
       // Create material with image texture
-      const material = new THREE.MeshStandardMaterial({
-          map: texture,
+  const material = new THREE.MeshStandardMaterial({
+      map: texture,
           roughness: 0.4,
           metalness: 0.5
 
