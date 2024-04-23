@@ -110,7 +110,6 @@ textureLoader.load(
           map: texture,
           roughness: 0.4,
           metalness: 0.5
-      });
 
   
   
@@ -119,7 +118,7 @@ textureLoader.load(
 //    color: 0x111111,
 //    roughness: 0.4,
 //    metalness: 0.5,
-//  });
+  });
 
 
 
