@@ -20,7 +20,7 @@ const lightYellow = 0xffe97d;
 //SCENE
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(white);
-scene.fog = new THREE.Fog(black, 4, 6);
+scene.fog = new THREE.Fog(blue, 4, 6);
 // const gridHelper = new THREE.GridHelper(200, 50);
 // scene.add(gridHelper)
 
